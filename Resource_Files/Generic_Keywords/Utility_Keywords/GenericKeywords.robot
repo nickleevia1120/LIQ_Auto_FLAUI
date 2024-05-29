@@ -1,12 +1,5 @@
 *** Settings ***
 Resource    ../../../Configuration/Import_File.robot
-Resource    ../../../Configuration/Global_Variables.robot
-Resource    ../../../Configuration/Import_File.robot
-Resource    ../../../Configuration/Setup.robot
-Resource    ../../../Object_Maps/LoanIQ_Locators/LIQ_LoginWindow.robot
-Resource    ../../../Object_Maps/LoanIQ_Locators/LIQ_ExitWindow.robot
-Resource    ../../../Object_Maps/LoanIQ_Locators/LIQ_Datasets.robot
-
 Documentation    This will hold all the generic keywords that can be used in both desktop app and web
 
 *** Keywords ***
@@ -28,6 +21,12 @@ Click Button
     ...    @author:    NOracion    24OCT2023    - initial create
     [Arguments]    ${locator}
     flauilibrary.click    ${locator}
+
+Perform Double Click
+     [Documentation]    This keyword is use to click the button.
+    ...    @author:    NOracion    17MAY2024    - initial create
+    [Arguments]    ${locator}
+    flauilibrary.double click    ${locator}
 
 Maximize Window
    [Documentation]    This keyword is use to restore the window.
@@ -54,10 +53,55 @@ Wait Until Window is Visible
     flauilibrary.wait until element is visible    ${locator}
 
 Exit Window
-   [Documentation]    This keyword is use to exit or close the window.
+    [Documentation]    This keyword is use to exit or close the window.
     ...    @author:    NOracion    24OCT2023    - initial create
     [Arguments]    ${locator}
     flauilibrary.click    ${locator}
 
+Select Radio Button
+    [Documentation]    This keyword is use to exit or close the window.
+    ...    @author:    NOracion    17MAY2024    - initial create
+    [Arguments]    ${locator}
+    flauiLibrary.select radiobutton    ${locator}
 
+Set Check Box
+    [Documentation]    This keyword is use to exit or close the window.
+    ...    @author:    NOracion    17MAY2024    - initial create
+    [Arguments]    ${locator}    ${value}
+    FlaUILibrary.set checkbox state    ${locator}    ${value}
 
+Expand Drop Down
+    [Documentation]    This keyword is use to exit or close the window.
+    ...    @author:    NOracion    23MAY2024    - initial create
+    [Arguments]    ${locator}
+    flauilibrary.expand combobox    ${locator}
+
+Select Drop Down List Item By Index
+    [Documentation]    This keyword is use to select all the items from combo box.
+    ...    @author:    NOracion    23MAY2024    - initial create
+    [Arguments]    ${locator}    ${index}
+    flauilibrary.select combobox item by index  ${locator}    ${index}
+
+Collapse Tree
+     [Documentation]    This keyword is use to exit or close the window.
+    ...    @author:    NOracion    20MAY2024    - initial create
+    [Arguments]    ${locator}    ${item}
+    flauilibrary.collapse treeitem     ${locator}    ${item}
+
+Expand Tree
+     [Documentation]    This keyword is use to exit or close the window.
+    ...    @author:    NOracion    20MAY2024    - initial create
+    [Arguments]    ${locator}    ${item}
+    FlaUILibrary.expand treeitem    ${locator}    ${item}
+
+Select List Item
+    [Documentation]    This keyword is use to select all the items from combo box.
+    ...    @author:    NOracion    24MAY2024    - initial create
+    [Arguments]    ${locator}    ${value}
+    flauilibrary.select listbox item by name    ${locator}    ${value}
+
+Perform Click Hyperlink
+     [Documentation]    This keyword is use to click the button.
+    ...    @author:    ECondino   23MAY2024    - initial create
+    [Arguments]    ${locator}
+    flauilibrary.click    ${locator}
