@@ -1,4 +1,4 @@
-LIQ_Login_Window = '/Window'
+LIQ_Login_Window = '/Window[contains(@Name, "Fusion Loan IQ - Login")]'
 LIQ_Login_Window_Pane = '(' + LIQ_Login_Window + '[1]//Pane)'
 
 LIQ_Login_Form_Locators = {

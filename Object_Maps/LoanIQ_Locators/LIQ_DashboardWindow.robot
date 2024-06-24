@@ -15,5 +15,6 @@ ${LIQ_MenuPane_Actions_Button}   ${LIQ_DashBoard_Window_Locators['Actions Button
 ${LIQ_MenuPane_TableMaintenance_Button}   ${LIQ_DashBoard_Window_Locators['Table Maintenance Button']}
 ${LIQ_MenuPane_Treasury_Button}   ${LIQ_DashBoard_Window_Locators['Treasury Button']}
 ${LIQ_MenuPane_WorkInProcess_Button}   ${LIQ_DashBoard_Window_Locators['Work In Process Button']}
-${LIQ_FavoritesPane_TreeItem}   ${LIQ_DashBoard_Window_Locators}
-${LIQ_ActionsPane_TreeItem}   ${LIQ_DashBoard_Window_Locators}
+${LIQ_FavoritesPane_TreeItem}   ${LIQ_DashBoard_Window_Locators['Favorites TreeItem']}
+${LIQ_ActionsPane_TreeItem}   ${LIQ_DashBoard_Window_Locators['Actions TreeItem']}
+${LIQ_ActionsCustomer_TreeItem}   ${LIQ_DashBoard_Window_Locators['Actions Customer TreeItem']}

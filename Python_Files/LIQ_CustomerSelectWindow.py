@@ -1,6 +1,6 @@
 LIQ_CustomerSelect_Window = '/Window[2]'
 LIQ_CustomerSelect_Input_Window = '/Window[contains(@Name, "Customer Select")]'
-LIQ_CustomerSelect_RadioButton_Pane = '/Window[2]/Pane[2]'
+LIQ_CustomerSelect_RadioButton_Pane = LIQ_CustomerSelect_Input_Window + '/Pane[2]'
 LIQ_CustomerSelect_Button_Pane = '/Window/Pane[1]'
 
 LIQ_CustomerSelect_Window_Locators = {

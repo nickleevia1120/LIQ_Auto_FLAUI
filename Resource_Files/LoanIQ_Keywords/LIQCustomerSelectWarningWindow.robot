@@ -7,9 +7,9 @@ Resource    ../../Object_Maps/LoanIQ_Locators/LIQ_CustomerSelectWarningWindow.ro
 LIQ CustomerSelectWarning Click Yes Button
     [Documentation]    This keyword is use to click the yes button..
     ...    @author:    ECondino    28MAY2024    - initial create
-    click button    ${liq_customerselectwarning_yes_button}
+    liq click window button    ${liq_customerselectwarning_yes_button}
 
 LIQ CustomerSelectWarning Click No Button
     [Documentation]    This keyword is use to click the yes button..
     ...    @author:    ECondino    28MAY2024    - initial create
-    click button    ${liq_customerselectwarning_no_button}
+    liq click window button     ${liq_customerselectwarning_no_button}

@@ -15,10 +15,17 @@ LIQ CustomerSelect Click RadioButton New
 LIQ CustomerSelect Enter Names
     [Documentation]    This keyword is use to input UserName in Username TextField.
     ...    @author:  NOracion    24MAY2024    - initial create
-    liq customerselect enter customer short name    ${liq_customerselect_customershortname_textfield}
-    #TODO: short name textfield not getting text
+    ${shortname}=    get cell value    ${customerselect_customershortname_cell}[row]     ${customerselect_customershortname_cell}[col]
+    ${transformed_shortname}=    Transform to Text Keys    ${shortname}
+    liq focus element    ${liq_customerselect_customershortname_textfield}
+    clear textfield text    ${liq_customerselect_customershortname_textfield}
+    liq customerselect enter customer short name    ${transformed_shortname}
     liq customerselect enter customer legal name    ${liq_customerselect_legalname_textfield}
-    click button    ${liq_customerselect_ok_button}
+    ${text_from_legalname}=    liq get data    ${liq_customerselect_legalname_textfield}
+    log to console    ${text_from_legalname}
+
+
+    #click button    ${liq_customerselect_ok_button}
 
 LIQ CustomerSelect Cancel Button
     click button    ${liq_customerselect_cancel_button}
@@ -46,7 +53,7 @@ LIQ CustomerSelect Enter Short Name
     ...    @author:    NOracion    24MAY2024    - initial create
     ${shortname}=    get cell value    ${customerselect_shortname_textfield_itemindex_cell}[row]     ${customerselect_shortname_textfield_itemindex_cell}[col]
     input text    ${liq_customerselect_shortname_textfield}    ${shortname}
-    #click button    ${liq_customerselect_search_button}
+    click button    ${liq_customerselect_search_button}
 
 LIQ CustomerSelect Click Status Filter
    [Documentation]    This keyword is use to maximize the LIQ dashboard window.
@@ -57,13 +64,18 @@ LIQ CustomerSelect Click Status Filter
 LIQ CustomerSelect Enter Customer Short Name
    [Documentation]    This keyword is use to maximize the LIQ dashboard window.
     ...    @author:    NOracion    24MAY2024    - initial create
-   [Arguments]   ${locator}
-    ${shortname}=    get cell value    ${customerselect_customershortname_cell}[row]     ${customerselect_customershortname_cell}[col]
-    input text    ${locator}    ${shortname}
+   [Arguments]   ${shortname}
+    flauilibrary.press key    ${shortname}
 
 LIQ CustomerSelect Enter Customer Legal Name
    [Documentation]    This keyword is use to maximize the LIQ dashboard window.
     ...    @author:    NOracion    24MAY2024    - initial create
    [Arguments]   ${locator}
     ${legalname}=    get cell value    ${customerselect_customerlegalname_cell}[row]     ${customerselect_customerlegalname_cell}[col]
-    input text    ${locator}    ${legalname}
+    liq enter text    ${locator}    ${legalname}
+
+LIQ CustomerSelect Get Document Value
+     [Documentation]    This keyword is use to get the document value of legal name.
+    ...    @author:    NOracion    05JUN2024    - initial create
+    ${document}    liq get document value    ${liq_customerselect_legalname_textfield}
+    log to console   ${document}

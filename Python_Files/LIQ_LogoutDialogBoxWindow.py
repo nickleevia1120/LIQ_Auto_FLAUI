@@ -8,6 +8,7 @@ LIQ_Logout_DialogBox_Locators = {
     'Exit Fusion Loan IQ RadioButton': LIQ_DialogBox_RadioButton_Pane + '//RadioButton[contains(@Name, "Exit Fusion Loan IQ")]',
     'Check Box': LIQ_DialogBox_Window + '//CheckBox[contains(@Name, "Save Desktop Settings")]',
     'OK Button': LIQ_DialogBox_Window_Pane + '//Button[contains(@Name, "OK")]',
+    'Cancel Button': LIQ_DialogBox_Window_Pane + '//Button[contains(@Name, "OK")]',
 
 }
 

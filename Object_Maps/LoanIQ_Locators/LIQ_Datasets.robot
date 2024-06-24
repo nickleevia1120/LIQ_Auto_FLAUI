@@ -13,6 +13,7 @@ Resource    ../../Configuration/Global_Variables.robot
 &{customerselect_shortname_combobox_itemindex_cell}    row=8   col=B
 &{customerselect_shortname_textfield_itemindex_cell}    row=9   col=B
 &{customerselect_list_itemname_cell}    row=10   col=B
-&{favorites_treeitem_cell}    row=11   col=B
-&{favorites_ankesh_12345_index_cell}    row=12   col=B
-&{favorites_ankesh_12345_treeitem_cell}    row=13   col=B
+&{logout_checkbox_cell}    row=11   col=B
+&{logout_radiobutton_cell}     row=12   col=B
+&{activecustomer_general_cell}    row=13   col=B
+&{activecustomer_corporate_cell}    row=14   col=B

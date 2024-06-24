@@ -9,24 +9,25 @@ LIQ Input Credentials
     [Documentation]    This keyword is use to input username in username textfield.
     ...    @author:       - initial create
     sleep    30s
-    wait until window is visible    ${liq_loginform_username_textfield}
+    liq activate window    ${liq_loginform_username_textfield}
+    liq focus element    ${liq_loginform_username_textfield}
     liq input username    ${liq_loginform_username_textfield}
     liq input password    ${liq_loginform_password_textfield}
-    click button    ${liq_loginform_login_button}
+    liq click window button    ${liq_loginform_login_button}
 
 LIQ Input UserName
     [Documentation]    This keyword is use to input username in username textfield.
     ...    @author:       - initial create
     [Arguments]   ${locator}
     ${username}=    get cell value    ${username_cell}[row]     ${username_cell}[col]
-    input text    ${locator}    ${username}
+    liq enter text    ${locator}    ${username}
 
 LIQ Input Password
     [Documentation]    This keyword is use to input password in password textfield.
     ...    @author:      - initial create
     [Arguments]    ${locator}
     ${password}=    get cell value    ${password_cell}[row]     ${password_cell}[col]
-    input text    ${locator}    ${password}
+    liq enter text    ${locator}    ${password}
 
 LIQ Click Hyperlink About
     [Documentation]    This keyword is use to click link.
